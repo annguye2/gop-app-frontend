@@ -270,10 +270,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
      createData.description = '';
      createData.category    = '';
      createData.feature_url     = '';
-    createData.comment     = '';
-
-
-
+     createData.comment     = '';
     }
 
     //************* ESRI delete shareprojects ******************************
@@ -505,17 +502,11 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
 
        this.addUserProjects(newProject);
 
-
-
-
-
-
       }else {
         console.log('Save public project failed');
-      }
-
 
    }
+  }
     //******************* ESRI Reset Public Project Selection *********
      this.resetSelectSharedProjectRequireMsg = (selectedProject) =>{
        if(selectedProject){
@@ -545,8 +536,17 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
      }
    }
 
+ // ************ ESRI cancel edit project *******************
+  this.cancelEditProject = () => {
+     this.editName        = '';
+     this.editComment     = '';
+     this.editCategory    = '';
+     this.editDescription = '';
+     this.editUrl         = '';
+  }
    // ************ ESRI Data initial loading ************************
     this.getFeatureUrl(); // get available featureServices
     this.getSharedProjects();
 
 }]); // end of EsriController
+console.clear();

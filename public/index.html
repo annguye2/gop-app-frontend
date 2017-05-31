@@ -142,13 +142,13 @@
             <div class="form-group">
               <label class="control-label col-sm-2" for="comment">Comment:</label>
               <div class="col-sm-10">
-                <textarea class="form-control" ng-disabled='ctrl.disableEditSection'rows="2" id="textarea" ng-model='esri.editComment'>></textarea>
+                <textarea class="form-control" ng-disabled='ctrl.disableEditSection'rows="2" id="textarea" ng-model='esri.editComment'></textarea>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-2" for="descritption">Description:</label>
               <div class="col-sm-10">
-                <textarea class="form-control"ng-disabled='ctrl.disableEditSection' rows="2" id="textarea" ng-model='esri.editDescription'>></textarea>
+                <textarea class="form-control"ng-disabled='ctrl.disableEditSection' rows="2" id="textarea" ng-model='esri.editDescription'></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -163,6 +163,7 @@
               </div>
               <div class="col-sm-8">
                 <button type="submit" ng-disabled='ctrl.disableEditSection'class="button"   ng-click='esri.editProject()'>Save Edit</button>
+                <button type="submit" ng-disabled='ctrl.disableEditSection'class="button"   ng-click='esri.cancelEditProject()'>Cancel Edit</button>
                 <button type="submit" ng-disabled='ctrl.disableEditSection'class="button" ng-click='esri.deleteProject(selectedprivateProject)'>Delete</button>
               </div>
             </div>
@@ -231,8 +232,8 @@
             </div>
             <div class="form-group">
               <div cdiv class="col-sm-offset-10 col-sm-10">
-                <button type="submit" class="button" ng-click='esri.createProject(createData)'>Create</button>
-                <button type="submit" ng-disabled='ctrl.disableEditSection'class="button" ng-click='esri.deleteSharedProject(selectedPublicProject)'>Delete project</button>
+                <button type="submit" ng-disabled="esri.disableCreateProjectSection"class="button" ng-click='esri.createProject(createData)'>Create</button>
+                <button type="submit" ng-disabled='ctrl.disableCreateProjectSection'class="button" ng-click='esri.deleteSharedProject(selectedPublicProject)'>Delete project</button>
               </div>
             </div>
           </form>
