@@ -25,7 +25,6 @@ function(
   dom,
   ready
 
-  // PopupTemplate
 ) {
     var basemapSelector ;
     var featureLayerUrl;
