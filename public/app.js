@@ -190,6 +190,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
       { value: "oceans",    label: "Oceans" }];
     this.featureServices = [];
     this.selectedProjectId;
+    this.showSaveCurrentProjectButton = false
 
     //******************** ESRI Save Map to Project********************
     this.createProjectFromMap = (selectedFeature) => {
@@ -256,6 +257,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
 
     //************ ESRI Create Project*********************************
     this.createProject = (createData) => {
+      console.log('add new project createdDate: ', createData);
       this.currentUser = JSON.parse(localStorage.getItem('currentUser')).user;
       if (createData.shared == true) {
         console.log('add share and private project');
@@ -264,6 +266,13 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
       }else {
         this.addUserProjects(createData);
       }
+     createData.name        = '';
+     createData.description = '';
+     createData.category    = '';
+     createData.feature_url     = '';
+    createData.comment     = '';
+
+
 
     }
 
@@ -390,7 +399,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
             comment:      createData.comment,
             description:  createData.description,
             user_id:      createData.user_id,
-            category:     createData.catergory,
+            category:     createData.category,
             feature_url:  createData.feature_url,
           }
         }).then(result => {
@@ -467,18 +476,46 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
       if(selectedProject){
         console.log('LOAD project to map');
         localStorage.setItem('currentFeatureUrl', selectedProject.feature_url);
+        this.showSaveCurrentProjectButton = true;
       }else{
         if(isPublic){
-          this.selectSharedProjectRequireMsg = "You must select a feature above";
+          this.selectSharedProjectRequireMsg = "You must select a project above";
         }
         else{
-          this.selectProjectRequireMsg = "You must select a feature above";
+          this.selectProjectRequireMsg = "You must select a project above";
         }
         console.log("SELECT failed");
       }
       selectedProject={};
     };
 
+   //  // *********** ESRI load  projects to map  ************************
+
+   this.saveCurrentProject = (selectedPublicProject) => {
+      console.log('Save current probject');
+      if (selectedPublicProject){
+        this.showSaveCurrentProjectButton = false; // hiding the button
+        var newProject ={
+          name:         selectedPublicProject.name,
+          description:  selectedPublicProject.description,
+          comment:      selectedPublicProject.comment,
+          category:     selectedPublicProject.category,
+          feature_url:  selectedPublicProject.feature_url
+        }
+
+       this.addUserProjects(newProject);
+
+
+
+
+
+
+      }else {
+        console.log('Save public project failed');
+      }
+
+
+   }
     //******************* ESRI Reset Public Project Selection *********
      this.resetSelectSharedProjectRequireMsg = (selectedProject) =>{
        if(selectedProject){
