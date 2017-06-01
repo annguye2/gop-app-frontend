@@ -123,11 +123,9 @@
           </div>
         </div><br>
 
-
             <!-- Modal Edit project -->
          <div class="modal fade" id="editProject" role="dialog" >
            <div class="modal-dialog">
-
              <!-- Modal edit section-->
              <div class="modal-content" style="background-image:url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg'); color:white;">
                <div class="modal-header">
@@ -190,7 +188,6 @@
                  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
                </div>
              </div>
-
            </div>
          </div>
         <!-- <div class="row">
@@ -243,7 +240,6 @@
             </div>
           </form>
         </div> -->
-
       </div>
       <!-- end user section column -->
 
@@ -254,8 +250,7 @@
           <label for="gender1" class="ontrol-label">Share Projects</label>
           <div class="form-group">
             <div class="col-sm-4" id='test'>
-              <button ng-disabled='ctrl.disableUserSection'class='button'type="button" name="button" ng-click='esri.enableCreateProjectSection()' data-toggle="modal"data-target="#create
-              Project">Create project</button>
+              <button ng-disabled='ctrl.disableUserSection'class='button'type="button" name="button" ng-click='esri.enableCreateProjectSection()' data-toggle="modal"data-target="#createProject">Create project</button>
               <button ng-click='esri.loadProjectToMap(selectedPublicProject, true)'class='button'type="button" id='loadSharedProjectToMap'name="button">Load</button>
             </div>
             <div class="col-sm-8">
@@ -315,66 +310,67 @@
         </div> -->
 
         <!-- Modal Create Project-->
-<div class="modal fade" id="createProject" role="dialog" >
-<div class="modal-dialog">
- <div class="modal-content" style="background-image:url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg'); color:white;">
-   <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">Creating New Project</h4>
-   </div>
-   <div class="modal-body">
-     <form class="form-horizontal">
-                 <div class="form-group" id='group-name'>
-                   <label class="control-label col-sm-2" for="Name:">Name:</label>
-                   <div class="col-sm-10">
-                     <input type="text" id='input' class="form-control" ng-model='createData.name' ng-disabled="esri.disableCreateProjectSection" placeholder="*required*">
-                   </div>
-                 </div>
-                 <div class="form-group" id='group-url'>
-                   <label class="control-label col-sm-2" for="catergory">URL:</label>
-                   <div class="col-sm-10">
-                    <input type="text" id='input' class="form-control" ng-disabled="esri.disableCreateProjectSection"ng-model='createData.feature_url'placeholder="*required* and must be Feature Layer url">
-                   </div>
-                 </div>
-                 <div class="form-group" id='group-category'>
-                   <label class="control-label col-sm-2" for="catergory">Category:</label>
-                   <div class="col-sm-10">
-                     <input type="text" id='input' class="form-control" ng-model='createData.category' ng-disabled="esri.disableCreateProjectSection">
-                   </div>
-                 </div>
-                 <div class="form-group" id='group-comment'>
-                   <label class="control-label col-sm-2" for="comment">Comment:</label>
-                   <div class="col-sm-10">
-                     <textarea class="form-control" rows="2" id="textarea" ng-model='createData.comment' ng-disabled="esri.disableCreateProjectSection"></textarea>
-                   </div>
-                 </div>
-                 <div class="form-group" id='group-description'>
-                   <label class="control-label col-sm-2" for="descritption">Description:</label>
-                   <div class="col-sm-10">
-                     <textarea class="form-control" rows="2" id="textarea" ng-model='createData.description' ng-disabled="esri.disableCreateProjectSection"></textarea>
-                   </div>
-                 </div>
-                 <div class="form-group">
-                   <label class="control-label col-sm-2" for=""> </label>
-                   <div class="col-sm-10">
-                     <label class="checkbox-inline"> <input type="checkbox" value="share" ng-model='createData.shared' ng-disabled="esri.disableCreateProjectSection">Share</label>
-                   </div>
-                 </div>
-                 <div class="form-group">
-                   <div cdiv class="col-sm-offset-10 col-sm-10">
-                     <button type="submit" ng-disabled="esri.disableCreateProjectSection"class="button" ng-click='esri.createProject(createData)'>Submit</button>
-                     <button type="submit" ng-disabled='ctrl.disableCreateProjectSection'class="button" ng-click='esri.deleteSharedProject(selectedPublicProject)'>Delete project</button>
-                   </div>
-                 </div>
-               </form>
+        <div class="modal fade" id="createProject" role="dialog" >
+          <div class="modal-dialog">
+            <div class="modal-content" style="background-image:url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg'); color:white;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Creating New Project</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group" id='group-name'>
+                    <label class="control-label col-sm-2" for="Name:">Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" id='input' class="form-control" ng-model='createData.name' ng-disabled="esri.disableCreateProjectSection" placeholder="*required*">
+                    </div>
+                  </div>
+                  <div class="form-group" id='group-url'>
+                    <label class="control-label col-sm-2" for="catergory">URL:</label>
+                    <div class="col-sm-10">
+                      <input type="text" id='input' class="form-control" ng-disabled="esri.disableCreateProjectSection"ng-model='createData.feature_url'placeholder="*required* and must be Feature Layer url">
+                    </div>
+                  </div>
+                  <div class="form-group" id='group-category'>
+                    <label class="control-label col-sm-2" for="catergory">Category:</label>
+                    <div class="col-sm-10">
+                      <input type="text" id='input' class="form-control" ng-model='createData.category' ng-disabled="esri.disableCreateProjectSection">
+                    </div>
+                  </div>
+                  <div class="form-group" id='group-comment'>
+                    <label class="control-label col-sm-2" for="comment">Comment:</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="2" id="textarea" ng-model='createData.comment' ng-disabled="esri.disableCreateProjectSection"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group" id='group-description'>
+                    <label class="control-label col-sm-2" for="descritption">Description:</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="2" id="textarea" ng-model='createData.description' ng-disabled="esri.disableCreateProjectSection"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for=""> </label>
+                    <div class="col-sm-10">
+                      <label class="checkbox-inline"> <input type="checkbox" value="share" ng-model='createData.shared' ng-disabled="esri.disableCreateProjectSection">Share</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div cdiv class="col-sm-offset-10 col-sm-10">
+                      <button type="submit" ng-disabled="esri.disableCreateProjectSection"class="button" ng-click='esri.createProject(createData)'>Submit</button>
+                      <button type="submit" ng-disabled='ctrl.disableCreateProjectSection'class="button" ng-click='esri.deleteSharedProject(selectedPublicProject)'>Delete project</button>
+                    </div>
+                  </div>
+                </form>
 
-  </div>  <!-- end modal body -->
-   <div class="modal-footer">
-     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-   </div>
- </div>
-</div>
-</div>
+              </div>  <!-- end modal body -->
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
       <!-- End of app Colum  -->
