@@ -541,6 +541,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
      console.log('add feature to map: ', selectedFeature);
      if(selectedFeature){
        this.showHideButtonBoolean = true; //show button that turn on attribute
+       this.showAttributeTableBoolean = true;
         localStorage.setItem('currentFeatureUrl', selectedFeature.url)
      }else{
        console.log("Failed to select feature");
