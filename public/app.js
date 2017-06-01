@@ -1,8 +1,8 @@
 
 // Domains variables
-//const app_domain = 'http://localhost:8000/';
+const app_domain = 'http://localhost:8000/';
 //const api_domain = 'http://localhost:3000/';
-const app_domain = 'https://project5-gop-app-frontend.herokuapp.com/';
+//const app_domain = 'https://project5-gop-app-frontend.herokuapp.com/';
 const api_domain = 'https://gop-app-server-api.herokuapp.com/'
 
 //==================Angular app  ================

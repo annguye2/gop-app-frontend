@@ -81,7 +81,7 @@
      </select>
         <button ng-click='esri.addSelectedFeatureToMap(selectedFeature)' id='addLayer' class='button' name="button" > Add To Map</button>
         <button ng-click='esri.removeLayer()'class='button' type="button" id='removeLayer' name="removelayer"> Remove Layer</button>
-        <button class='button' type="button" ng-click='esri.createProjectFromMap(selectedFeature)'> Save map to rojects</button>
+        <button class='button' type="button" ng-click='esri.createProjectFromMap(selectedFeature)'> Save map to projects</button>
         <button ng-show='esri.showSaveCurrentProjectButton' ng-click='esri.saveCurrentProject(selectedPublicProject)'class='button' type="button" > Save current project</button>
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.requiredLoginMsg}}</span>
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.selectFeatureRequireMsg}}</span>
