@@ -142,7 +142,7 @@ function(
     var addFeatureLayer = (url) => {
       var _id = makeId() ;
       // console.log("new id ", _id);
-      var $div = $("<div>", {id: _id, "class": "a", "text":" kshofhdkhdfhdkfh"});
+      var $div = $("<div>", {id: _id, "class": "attr-table",}); //create new div for attribute table
 
        $("#bot").append($div);
       if(url) {
@@ -171,7 +171,7 @@ function(
         }, _id);
 
         console.log('muy feature table :',myFeatureTable);
-        // myFeatureTable.refresh();
+
         myFeatureTable.startup();
         map.addLayer(_featureLayer);  // add layer
         map.refresh;

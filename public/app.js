@@ -190,9 +190,12 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
       { value: "dark-gray", label: "Dark Gray Canvas" },
       { value: "satellite", label: "Satellite" },
       { value: "oceans",    label: "Oceans" }];
-    this.featureServices = [];
+    this.featureServices              = [];
     this.selectedProjectId;
-    this.showSaveCurrentProjectButton = false
+    this.showSaveCurrentProjectButton = false;
+    this.showAttributeTableBoolean    = true;
+    this.showAttributeTable           = false;
+    this.showHideButtonBoolean        = false;
 
     //******************** ESRI Save Map to Project********************
     this.createProjectFromMap = (selectedFeature) => {
@@ -524,14 +527,20 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
     // ************ ESRI Remove current layer *******************
    this.removeLayer = () =>{
      console.log('angular ');
+     this.showHideButtonBoolean = false;
      localStorage.removeItem("currentFeatureUrl")
      //localStorage.setItem('', "");
    }
+
+    this.showAttributeTable = () =>{
+      this.showAttributeTableBoolean = !this.showAttributeTableBoolean;
+    }
 
    // ************ ESRI add Selected Feature To map *******************
    this.addSelectedFeatureToMap = (selectedFeature) =>{
      console.log('add feature to map: ', selectedFeature);
      if(selectedFeature){
+       this.showHideButtonBoolean = true; //show button that turn on attribute
         localStorage.setItem('currentFeatureUrl', selectedFeature.url)
      }else{
        console.log("Failed to select feature");
