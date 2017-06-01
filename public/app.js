@@ -1,7 +1,9 @@
 
 // Domains variables
-const app_domain = 'http://localhost:8000/';
-const api_domain = 'http://localhost:3000/';
+//const app_domain = 'http://localhost:8000/';
+//const api_domain = 'http://localhost:3000/';
+const app_domain = 'https://project5-gop-app-frontend.herokuapp.com/';
+const api_domain = 'https://gop-app-server-api.herokuapp.com/'
 
 //==================Angular app  ================
 const app = angular.module('GopApp', []);
@@ -87,7 +89,7 @@ app.controller('UserController', ['$http', '$scope','$rootScope',function($http,
       }).then(response =>{
         // console.log("response from log in ", response);
         if(response.data.status == 200){
-          console.log('login success');
+          console.log('login success: ', response.data);
           this.sucessfulLoginMsg = response.data.message;
           this.currentUserProjects = response.data.projects;  // get current user project
           $rootScope.currentUserProjects = this.currentUserProjects;
@@ -242,7 +244,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
         method: 'GET',
         url:    api_domain + '/features'
       }).then(result =>{
-        // console.log('seed data : ', result.data);
+         console.log('seed data : ', result.data);
         this.featureServices = result.data;
         localStorage.setItem('featureServices', JSON.stringify(result.data));
       });
