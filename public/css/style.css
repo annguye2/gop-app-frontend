@@ -9,9 +9,14 @@
 body{
   font-family:Roboto,Arial,sans-serif;-ms-touch-action:none;touch-action:none;
   background: #D7F8FF;
+  /*background-image: url('https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/itrf2014_final2_cleanedge-use.jpg?itok=l5dr8lX-');*/
+  background-image: url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg');
+  /*background-image: url('http://www.freemaninstitute.com/EartAtNight-Best-Large.jpg');*/
+  background-repeat: no-repeat;
+
 }
 #navbar{
-  font-size: 2.25rem;
+  font-size: 2 rem;
 }
 #nav
 {
@@ -21,6 +26,7 @@ body{
   align-items: center;
   justify-content: center;
   text-decoration: none ;
+
 }
 h1 {
   width: 100%;
@@ -125,6 +131,25 @@ width: 35%;
   top: 5%;
   left: 3%;
   z-index: 50;
+  font-size: 10px;
+}
+
+
+.attribute-table{
+  position: absolute;
+  width: 98%;
+  height: 20vh;
+  z-index: 50;
+  left: 17px;
+  bottom: 1px;
+  z-index: 100;
+
+}
+#myTableNode{
+  width:100%;
+      height:100%;
+      margin:0;
+      padding:0;
 }
 
 #scalebar{

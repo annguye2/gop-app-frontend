@@ -1,6 +1,10 @@
 require([
   "esri/map",
   "esri/layers/FeatureLayer",
+  "esri/dijit/FeatureTable",
+  "esri/symbols/SimpleMarkerSymbol",
+  "esri/symbols/SimpleLineSymbol",
+  "esri/Color",
   "esri/tasks/QueryTask",
   "esri/tasks/query",
   "esri/dijit/Search",
@@ -15,6 +19,10 @@ require([
 function(
   Map,
   FeatureLayer,
+  FeatureTable,
+  SimpleMarkerSymbol,
+  SimpleLineSymbol,
+  Color,
   QueryTask,
   Query,
   Search,
@@ -26,6 +34,7 @@ function(
   ready
 
 ) {
+    var myFeatureTable = {};
     var basemapSelector ;
     var featureLayerUrl;
     var currentLayer;
@@ -33,6 +42,8 @@ function(
     var centralUS = [-97.380979, 42.877742];  //central us
     var centralVA = [-77.871094, 37.439974];  // central virginia
     var centralNY = [-77.0369, 38.9072];
+    var tableID = '';
+    var selectionSymbol =  new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 12, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 197, 1])));
 
     //*********************** Map components initialize  ********************
     // console.log('map is loading..');
@@ -89,14 +100,6 @@ function(
     });
 
     //************************ featureServiceSelector **********
-    // $("#featureServiceSelector" ).change(() => {
-    //   var index = $("#featureServiceSelector")[0].selectedIndex
-    //   var data = JSON.parse(localStorage.getItem('featureServices'))
-    //   featureLayerUrl = data[index].url
-    //   //console.log("featureLayerUrl ",featureLayerUrl );
-    // });
-
-    //************************ featureServiceSelector **********
     $("#loadProjectToMap").click(() => {
       if(localStorage.getItem('currentFeatureUrl')){
         featureLayerUrl = localStorage.getItem('currentFeatureUrl');
@@ -116,13 +119,18 @@ function(
       }else{ console.log('Can not add layer');}
       //localStorage.setItem('currentFeatureUrl', "");
     });
+
     //************************ removeLayer *********************
+
     $('#removeLayer').click(() => {
       removeLayer();
     });
 
     //************************ add layer event ******************
+
     $("#addLayer").click(() =>{
+
+       console.log('this is attribte table Id: ',  $('.attr-table'));
       if(localStorage.getItem('currentFeatureUrl')){
         featureLayerUrl = localStorage.getItem('currentFeatureUrl');
         addFeatureLayer(featureLayerUrl);
@@ -132,6 +140,11 @@ function(
 
     //******************* add FeatureLayer **********************
     var addFeatureLayer = (url) => {
+      var _id = makeId() ;
+      // console.log("new id ", _id);
+      var $div = $("<div>", {id: _id, "class": "a", "text":" kshofhdkhdfhdkfh"});
+
+       $("#bot").append($div);
       if(url) {
         console.log('add layer: ');
         var tempFeatureLayer = new FeatureLayer(url);
@@ -139,19 +152,32 @@ function(
         tempFeatureLayer.on("load", function () {
           template.setTitle("<b>" + tempFeatureLayer.name + "</b>");
         });
-        var featureLayer = new FeatureLayer(url,{
+        var _featureLayer = new FeatureLayer(url,{
           mode: FeatureLayer.MODE_ONDEMAND,
           infoTemplate: template,
           outFields: ['*'],
           opacity: 1,
-          visible: true
+          visible: true,
+           id: "fLayer"
         });
-        map.addLayer(featureLayer);  // add layer
+
+          _featureLayer.setSelectionSymbol(selectionSymbol);
+          myFeatureTable = new FeatureTable({
+          map: map,
+          syncSelection: true,
+          zoomToSelection: true,
+             featureLayer : _featureLayer,
+             showGridMenu: false,
+        }, _id);
+
+        console.log('muy feature table :',myFeatureTable);
+        // myFeatureTable.refresh();
+        myFeatureTable.startup();
+        map.addLayer(_featureLayer);  // add layer
         map.refresh;
-        currentLayer = featureLayer;
+        currentLayer = _featureLayer;
       //
-      }
-      else {  console.log("no layer to add");}
+        }else {  console.log("no layer to add");}
 
     }
 
@@ -160,6 +186,7 @@ function(
       if(currentLayer){
         console.log('remove current layer: ', map);
         map.removeLayer(currentLayer);
+        myFeatureTable.destroy();
         map.refresh;
         currentLayer = '';
         featureLayerUrl = '';
@@ -182,7 +209,15 @@ function(
       });
     };// end of read data function
 
-  //********** testing ******************
+  //********** Generate new id of attr-table ******************
+
+  var makeId =  () =>{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < 3; i++ )
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  }
 
   // ready(init(map));
   ready(init);

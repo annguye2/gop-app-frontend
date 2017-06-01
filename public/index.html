@@ -3,6 +3,7 @@
 <head >
   <meta charset="utf-8"> <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title> Geospatial Online Tool</title>
+  <!-- <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -64,6 +65,20 @@
            <div class="col-sm-2" id="scalebar">d</div>
              <!-- <img id="loadingimg" src="images/loading.gif" style="position:absolute; right:475px; top:56px; z-index:200;" /> -->
              <img id="loadingImg"  src="images/loading.gif" style="position:absolute; right:512px; top:256px; z-index:100;" />
+
+
+             <div class="attribute-table">
+                 <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters: false" style="width:70%; height:50%;">
+                   <div id="top" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+                   </div>
+                   <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+                     <!-- <div   id='myTableNode' class='attr-table' style='boder:1px solid red; height: 300px;'></div> -->
+                   </div>
+                 </div>
+               </div>
+
+
+
         </div>
       </div>
     </div>
@@ -354,9 +369,6 @@
               <div class="row">
                 Fill in the information below
               </div>
-              <!-- <div class="row">
-                (<span id='required'>red</span> = required)
-              </div> -->
 
               <div class="row">
                 <div class="col-sm-5" id=''>
@@ -407,9 +419,11 @@
         </div>
       </div>
     </div>
-  </div><!-- End of page (bootstrap) container  -->
+
+    <!-- layer's attribute table -->
 
 
+ <a  class="navbar-brand" data-toggle="modal" href="#attributeModal">REGISTER</a>
 
   <!-- footer -->
   <footer id='footer'>
