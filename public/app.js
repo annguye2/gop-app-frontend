@@ -479,6 +479,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
         console.log('LOAD project to map');
         localStorage.setItem('currentFeatureUrl', selectedProject.feature_url);
         this.showSaveCurrentProjectButton = true;
+        this.showHideButtonBoolean = true;
       }else{
         if(isPublic){
           this.selectSharedProjectRequireMsg = "You must select a project above";
