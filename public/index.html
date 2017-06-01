@@ -63,16 +63,10 @@
         <div class="row">
            <div class="col-sm-2" id="HomeButton"></div>
            <div class="col-sm-2" id="scalebar">d</div>
-             <!-- <img id="loadingimg" src="images/loading.gif" style="position:absolute; right:475px; top:56px; z-index:200;" /> -->
+
              <img id="loadingImg"  src="images/loading.gif" style="position:absolute; right:512px; top:256px; z-index:100;" />
-
-                  <!-- <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters: false" style="width:100%; height:100%;"> -->
-                 <!-- <div id="top" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'"></div> -->
-                 <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" ng-show='esri.showAttributeTableBoolean'>
-                 </div>
-               <!-- </div> -->
-
-        </div>
+                 <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" ng-show='esri.showAttributeTableBoolean'></div>
+       </div>
       </div>
     </div>
     <div class="row" id='map-tool'>
@@ -114,7 +108,7 @@
         <div class="row">
           <div class="col-sm-4" id='test'>
             <button id='loadProjectToMap'ng-disabled='ctrl.disableUserSection' class='button'type="button" ng-click='esri.loadProjectToMap(selectedprivateProject, false)'>Load To Map</button>
-            <button ng-disabled='ctrl.disableUserSection'class='button'type="button" ng-click='ctrl.enableEditSection(); esri.loadProjectEditInfo(selectedprivateProject)'>Edit</button>
+            <button ng-disabled='ctrl.disableEditSection'class='button'type="button" ng-click='ctrl.enableEditSection(); esri.loadProjectEditInfo(selectedprivateProject)' data-toggle="modal"data-target="#editProject">Edit</button>
           </div>
           <div class="form-group">
             <div class="col-sm-8">
@@ -129,7 +123,76 @@
           </div>
         </div><br>
 
-        <div class="row">
+            <!-- Modal Edit project -->
+         <div class="modal fade" id="editProject" role="dialog" >
+           <div class="modal-dialog">
+
+             <!-- Modal edit section-->
+             <div class="modal-content" style="background-image:url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg'); color:white;">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">Modal Header</h4>
+               </div>
+               <div class="modal-body">
+                   <div class="row">
+                 <form class="form-horizontal">
+                   <div class="form-group" id='group-name'>
+                     <label class="control-label col-sm-2" for="Name:">Name:</label>
+                     <div class="col-sm-10">
+                       <input type="text" id='input' class="form-control" ng-model='esri.editName' placeholder="">
+                     </div>
+                   </div>
+                   <div class="form-group" id='group-name'>
+                     <label class="control-label col-sm-2" for="url:">URL:</label>
+                     <div class="col-sm-10">
+                       <input readonly=""type="text" id='input' class="form-control" ng-model='esri.editUrl'>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <label class="control-label col-sm-2" for="catergory">Category:</label>
+                     <div class="col-sm-10">
+                       <input type="text" id='input' class="form-control" ng-model='esri.editCategory'>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <label class="control-label col-sm-2" for="comment">Comment:</label>
+                     <div class="col-sm-10">
+                       <textarea class="form-control" rows="2" id="textarea" ng-model='esri.editComment'></textarea>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <label class="control-label col-sm-2" for="descritption">Description:</label>
+                     <div class="col-sm-10">
+                       <textarea class="form-control" rows="2" id="textarea" ng-model='esri.editDescription'></textarea>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <label class="control-label col-sm-2" for="descritption"> </label>
+                     <div class="col-sm-10">
+                       <label class="checkbox-inline"> <input type="checkbox" ng-disabled='ctrl.disableEditSection'value="share" ng-model='esri.editShared'>Share</label>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                     <div class="col-sm-4">
+                       <!-- <button type="submit" ng-disabled='ctrl.disableEditSection'class="button">Submit</button> -->
+                     </div>
+                     <div class="col-sm-8">
+                       <button type="submit" ng-disabled='ctrl.disableEditSection'class="button"  data-dismiss="modal" ng-click='esri.editProject()'>Save Edit</button>
+                       <button type="submit" ng-disabled='ctrl.disableEditSection'class="button"  data-dismiss="modal" ng-click='esri.cancelEditProject()'>Cancel Edit</button>
+                       <button type="submit" ng-disabled='ctrl.disableEditSection'class="button" data-dismiss="modal"ng-click='esri.deleteProject(selectedprivateProject)'>Delete</button>
+                     </div>
+                   </div>
+                 </form>
+               </div>
+               </div>
+               <div class="modal-footer">
+                 <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+               </div>
+             </div>
+
+           </div>
+         </div>
+        <!-- <div class="row">
           <form class="form-horizontal">
             <div class="form-group" id='group-name'>
               <label class="control-label col-sm-2" for="Name:">Name:</label>
@@ -169,7 +232,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-4">
-                <!-- <button type="submit" ng-disabled='ctrl.disableEditSection'class="button">Submit</button> -->
+
               </div>
               <div class="col-sm-8">
                 <button type="submit" ng-disabled='ctrl.disableEditSection'class="button"   ng-click='esri.editProject()'>Save Edit</button>
@@ -178,7 +241,7 @@
               </div>
             </div>
           </form>
-        </div>
+        </div> -->
 
       </div>
       <!-- end user section column -->
@@ -253,6 +316,8 @@
 
     </div>
     <!-- End of user section -->
+
+
 
     <!-- modal login section -->
     <div class="modal fade" id="logInModal" role="dialog" >
@@ -415,10 +480,6 @@
       </div>
     </div>
 
-    <!-- layer's attribute table -->
-
-
- <a  class="navbar-brand" data-toggle="modal" href="#attributeModal">REGISTER</a>
 
   <!-- footer -->
   <footer id='footer'>
