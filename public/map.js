@@ -49,7 +49,7 @@ function(
     // console.log('map is loading..');
     var map = new Map("map", {
       basemap:"streets",
-      center: centralVA,
+      center: centralUS,
       sliderPosition: "top-right",
       zoom: 10
     });

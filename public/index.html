@@ -24,7 +24,7 @@
     <div class="container"   id='container-1' >
       <div class="row" id='nav'>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-          <a id='navbar' class="navbar-brand" href="http://www.arcgis.com/home/index.html">ESRI</a>
+          <a id='navbar' class="navbar-brand" target="_blank"href="http://www.arcgis.com/home/index.html">ESRI</a>
         </nav>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
@@ -83,10 +83,10 @@
           <option value="">---------------------Select A Feature Service------------------</option>
      </select>
         <button ng-click='esri.addSelectedFeatureToMap(selectedFeature)' id='addLayer' class='button' name="button" >Add To Map</button>
-        <button ng-click='esri.removeLayer()'class='button' type="button" id='removeLayer' name="removelayer">Remove Layer</button>
+        <button ng-click='esri.removeLayer()'class='button' type="button" id='removeLayer' name="removelayer">Remove layer</button>
         <button class='button' type="button" ng-click='esri.createProjectFromMap(selectedFeature)'>Save map to projects</button>
         <button ng-show='esri.showSaveCurrentProjectButton' ng-click='esri.saveCurrentProject(selectedPublicProject)'class='button' type="button" >Save current project</button>
-        <button ng-click='esri.showAttributeTable()'class='button' type="button" ng-show='esri.showHideButtonBoolean'> Show/Hide attribute </button>
+        <button ng-click='esri.showAttributeTable()'class='button' type="button" ng-show='esri.showHideButtonBoolean'> Show/Hide Table </button>
 
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.requiredLoginMsg}}</span>
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.selectFeatureRequireMsg}}</span>
@@ -247,7 +247,7 @@
       <!-- app section (COLUM) -->
       <div class="col-sm-4" id='app-col'>
         <div class="row"> <br>
-          <label for="project" class="ontrol-label">Share Projects</label>
+          <label for="project" class="ontrol-label">Shared Projects</label>
           <div class="form-group">
             <div class="col-sm-4" id='test'>
               <button ng-disabled='ctrl.disableUserSection'class='button'type="button" name="button" ng-click='esri.enableCreateProjectSection()' data-toggle="modal"data-target="#createProject">Create project</button>
@@ -352,7 +352,7 @@
                   <div class="form-group">
                     <label class="control-label col-sm-2" for=""> </label>
                     <div class="col-sm-10">
-                      <label class="checkbox-inline"> <input type="checkbox" value="share" ng-model='createData.shared' ">Share</label>
+                      <label class="checkbox-inline"> <input type="checkbox" value="share" ng-model='createData.shared'>Share</label>
                     </div>
                   </div>
                   <div class="form-group">

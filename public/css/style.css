@@ -9,9 +9,8 @@
 body{
   font-family:Roboto,Arial,sans-serif;-ms-touch-action:none;touch-action:none;
   height: 100%;
-    background: url('https://ak9.picdn.net/shutterstock/videos/11228543/thumb/1.jpg') no-repeat center center fixed;
   background-size: cover;
-  /*background: url('https://ak6.picdn.net/shutterstock/videos/11482925/thumb/1.jpg') no-repeat center center fixed;*/
+  background-image:url('../images/background.png');
 }
 
 .container{

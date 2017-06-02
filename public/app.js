@@ -562,4 +562,4 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
     this.getSharedProjects();
 
 }]); // end of EsriController
-console.clear();
+// console.clear();
