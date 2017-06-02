@@ -158,6 +158,9 @@ width: 35%;
       padding:0;
 }
 
+input{
+  color: black;
+}
 #scalebar{
   position: absolute;
   bottom: 6%;
