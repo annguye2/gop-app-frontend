@@ -158,6 +158,13 @@ width: 35%;
       padding:0;
 }
 
+#login-display{
+  color:#2C09D1;
+}
+#user-name{
+  color: #2CAAD1;
+  font-family: 'Lato', sans-serif;
+}
 input{
   color: black;
 }

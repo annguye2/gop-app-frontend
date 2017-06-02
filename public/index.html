@@ -100,7 +100,7 @@
       <div class="col-sm-8" id='user-col'>
         <div class="row"> <br>
           <div class="col-sm-6">
-            <label for="login">Login as: {{ctrl.displayUser.name}}</label>
+            <label id='login-display' for="login">Login as: <span id='user-name'>{{ctrl.displayUser.name}}</span></label>
           </div>
           <div class="col-sm-6">
             <a ng-disabled='ctrl.disableUserSection'data-toggle="modal" href="#editModal"> Edit Profile</a>
