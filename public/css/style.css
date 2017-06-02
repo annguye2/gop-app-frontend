@@ -79,14 +79,13 @@ select{
   font-size: 1em;
   text-align: center;
   background-color: Transparent;
-  color: #162D7F;
-  /*border-radius: 2px;*/
+  /*color: #162D7F;*/
+  color: black;
+  border-radius: 2px;
 
 
  border: 1px;
- /*background: none;*/
- background-color: #DBDBDB;
- box-shadow:none;
+ background-color: #B8E5F4;
  border: 1px;
 }
 #row{
