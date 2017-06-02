@@ -51,7 +51,7 @@ function(
       basemap:"streets",
       center: centralUS,
       sliderPosition: "top-right",
-      zoom: 10
+      zoom: 4
     });
     //************ hide waiting image
     function init() {

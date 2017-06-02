@@ -32,24 +32,23 @@
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand" href="/">HOME</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav ng-show='ctrl.disableUserSection'class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-          <a id='navbar'class="navbar-brand" data-toggle="modal" href="#logInModal">LOGIN</a>
+        <nav ng-show='ctrl.disableUserSection'class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <a id='navbar'class="navbar-brand" data-toggle="modal" href="#logInModal">SIGN IN</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav ng-show='ctrl.disableUserSection'class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
         </nav>
         <nav   class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a ng-show='ctrl.disableUserSection'id='navbar'class="navbar-brand" data-toggle="modal" href="#registerModal">REGISTER</a>
-          <a ng-show='!ctrl.disableUserSection'id='navbar'class="navbar-brand"  >REGISTER</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav ng-show='!ctrl.disableUserSection'class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-          <a id='navbar'class="navbar-brand"  href="/" ng-click='ctrl.logout()'>LOG OUT</a>
+        <nav ng-show='!ctrl.disableUserSection'class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <a  id='navbar'class="navbar-brand"  href="/" ng-click='ctrl.logout()'>SIGN OUT</a>
         </nav>
       </div>
 
@@ -62,19 +61,18 @@
     <div class="row" id='map-section'>
       <div  id="map">
         <div class="row">
-           <div class="col-sm-2" id="HomeButton"></div>
-           <div class="col-sm-2" id="scalebar">d</div>
-
-             <img id="loadingImg"  src="images/loading.gif" style="position:absolute; right:512px; top:256px; z-index:100;" />
-                 <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" ng-show='esri.showAttributeTableBoolean'></div>
-       </div>
+          <div class="col-sm-2" id="HomeButton"></div>
+          <div class="col-sm-2" id="scalebar">d</div>
+          <img id="loadingImg"  src="images/loading.gif" style="position:absolute; right:512px; top:256px; z-index:100;" />
+          <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" ng-show='esri.showAttributeTableBoolean'></div>
+        </div>
       </div>
     </div>
     <div class="row" id='map-tool'>
       <div class="col-sm-3" id="search"> </div>
       <div class="col-sm-2" id="base-map">
         <select id='basemapSelector'  ng-model="esri.selectedBasemapGallery" class="form-control">
-          <option class="selectpicker"value="">---change base map--</option> <!-- not selected / blank option -->
+          <option class="selectpicker"value="">---Change Base Map--</option> <!-- not selected / blank option -->
           <option ng-repeat="basemap in esri.basemapGallery | orderBy: 'label' " value="{{basemap.value}}">{{basemap.label}}</option>
         </select>
       </div>
@@ -83,8 +81,8 @@
           <option value="">---------------------Select A Feature Service------------------</option>
      </select>
         <button ng-click='esri.addSelectedFeatureToMap(selectedFeature)' id='addLayer' class='button' name="button" >Add To Map</button>
-        <button ng-click='esri.removeLayer()'class='button' type="button" id='removeLayer' name="removelayer">Remove layer</button>
-        <button class='button' type="button" ng-click='esri.createProjectFromMap(selectedFeature)'>Save map to projects</button>
+        <button ng-click='esri.removeLayer()'class='button' type="button" id='removeLayer' name="removelayer">Remove Layer</button>
+        <button class='button' type="button" ng-click='esri.createProjectFromMap(selectedFeature)'>Save Map To Projects</button>
         <button ng-show='esri.showSaveCurrentProjectButton' ng-click='esri.saveCurrentProject(selectedPublicProject)'class='button' type="button" >Save current project</button>
         <button ng-click='esri.showAttributeTable()'class='button' type="button" ng-show='esri.showHideButtonBoolean'> Show/Hide Table </button>
 
@@ -92,7 +90,7 @@
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.selectFeatureRequireMsg}}</span>
       </div>
     </div>
-    <br><br>
+    <br>
     <!-- user SECTION  -->
     <div class="row" id='user-container'>
 

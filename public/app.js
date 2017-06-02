@@ -529,7 +529,8 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
    this.removeLayer = () =>{
      console.log('angular ');
      this.showHideButtonBoolean = false;
-     localStorage.removeItem("currentFeatureUrl")
+     localStorage.removeItem("currentFeatureUrl");
+     this.getFeatureUrl();
      //localStorage.setItem('', "");
    }
 
