@@ -76,11 +76,18 @@ select{
 }
 .button{
   height: 25px;
-  font-size: .75em;
+  font-size: 1em;
   text-align: center;
   background-color: Transparent;
   color: #162D7F;
-  border-radius: 2px;
+  /*border-radius: 2px;*/
+
+
+ border: 1px;
+ /*background: none;*/
+ background-color: #DBDBDB;
+ box-shadow:none;
+ border: 1px;
 }
 #row{
   height: 1em;
