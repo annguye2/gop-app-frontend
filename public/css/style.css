@@ -8,15 +8,25 @@
 }
 body{
   font-family:Roboto,Arial,sans-serif;-ms-touch-action:none;touch-action:none;
-  background: #D7F8FF;
-  /*background-image: url('https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/itrf2014_final2_cleanedge-use.jpg?itok=l5dr8lX-');*/
-  background-image: url('https://ak9.picdn.net/shutterstock/videos/4576922/thumb/9.jpg');
-  /*background-image: url('http://www.freemaninstitute.com/EartAtNight-Best-Large.jpg');*/
+  height: 100%;
+    background: url('https://ak9.picdn.net/shutterstock/videos/11228543/thumb/1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  /*background: url('https://ak6.picdn.net/shutterstock/videos/11482925/thumb/1.jpg') no-repeat center center fixed;*/
+}
+
+.container{
+  /*height: 100%;*/
+  /*width: :100%;*/
+
+  border: 1px solid #5B5F66;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 
 }
 #navbar{
-  font-size: 2 rem;
+  font-size: 1.75 rem;
+  font-weight: 400;
 }
 #nav
 {
@@ -58,25 +68,21 @@ h4, h3{
 #app-col, #user-col{
   width: 50%;
   border: 1px solid black;
-  height: 400px;
+  height: 100px;
 }
-#map-tool{
-  display: inline-flex;
-  flex-direction: row;
-}
-#user-container{
-  /*width: 100%;*/
-}
-/*#featureServiceSelector{
 
-  height: 30px;
-}*/
+select{
+   background:none;
+   background-color: Transparent;
+   -webkit-appearance: none;
+}
 .button{
   height: 25px;
-  font-size: 10px;
+  font-size: 1em;
   text-align: center;
   background-color: Transparent;
-  color: #262D8A;
+  /*color: #262D8A;*/
+  color: #F56C18;
   border-radius: 4px;
 }
 #row{
