@@ -41,8 +41,9 @@
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
         </nav>
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-          <a id='navbar'class="navbar-brand" data-toggle="modal" href="#registerModal">REGISTER</a>
+        <nav   class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <a ng-show='ctrl.disableUserSection'id='navbar'class="navbar-brand" data-toggle="modal" href="#registerModal">REGISTER</a>
+          <a ng-show='!ctrl.disableUserSection'id='navbar'class="navbar-brand"  >REGISTER</a>
         </nav>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
