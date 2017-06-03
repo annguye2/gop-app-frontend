@@ -73,4 +73,4 @@
 
  
 
-!['geospatial-online-projects'](http://url/to/img.png)
+![geospatial-online-projects](gop-app-frontend/public/images/Geospatial Online Projects.png)
