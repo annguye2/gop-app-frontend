@@ -3,7 +3,7 @@
 <head >
   <meta charset="utf-8"> <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title> Geospatial Online Tool</title>
-  <!-- <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css"> -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -343,7 +343,7 @@
             <div class="modal-body">
               <label for="username">User name:</label><input id='login' ng-model='userPass.username'type="text" name="username" value="" placeholder="username">
               <label for="password">Password:</label><input id='login' ng-model='userPass.password'type="password" name="password" value="" placeholder="password">
-              <button type="button" class="button"  ng-click='ctrl.login(userPass)'>Login</button>
+              <button type="button" class="button"  ng-click='ctrl.login(userPass)'>Login</button><br>
               <span id='required'>{{ctrl.failedLoginMsg}}</span>
               <span id='login-success'>{{ctrl.sucessfulLoginMsg}}</span>
             </div>

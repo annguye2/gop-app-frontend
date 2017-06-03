@@ -80,7 +80,7 @@ select{
   text-align: center;
   background-color: Transparent;
   /*color: #162D7F;*/
-  color: black;
+  color: #4D5052;
   border-radius: 2px;
 
 
@@ -163,7 +163,7 @@ border: 3px solid white;
 }
 
 #login-display{
-  color:#2C09D1;
+  color:#4D5052;;
 }
 #user-name{
   color: #2CAAD1;
