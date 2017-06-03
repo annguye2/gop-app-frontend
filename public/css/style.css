@@ -1,26 +1,29 @@
 
 #map{
-  height: 600px;
+  height: 700px;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-body{
+html, body{
   font-family:Roboto,Arial,sans-serif;-ms-touch-action:none;touch-action:none;
   height: 100%;
-  background-size: cover;
+
   background-image:url('../images/background.png');
+  background-size: cover;
+  width: 90%;
+  text-align: center;
+  margin-left: 8%;
 }
 
+#title{
+  height: 100px;
+  font-size: 5em;
+}
 .container{
-  /*height: 100%;*/
-  /*width: :100%;*/
-
-  /*border: 1px solid #5B5F66;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 #navbar{
   font-size: 1.75 rem;
@@ -44,7 +47,7 @@ h1 {
   color: #2208A6;
   height: 50px;
   padding-top: 1%;
-  font-size: 32px;
+  font-size: 10em;
   font-weight: bold;
 }
 h4, h3{
@@ -70,9 +73,8 @@ h4, h3{
 
 #app-col, #user-col{
   width: 50%;
-  height: 300px;
-  border: 1px solid red;
-  height: 90px;
+  height: 100%;
+  border: 1px solid white;
 }
 
 select{
