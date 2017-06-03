@@ -21,12 +21,25 @@
   <!-- header -->
   <header>
     <div class="container-fluid" id='title'>
-        <p>Geospatial Online Projects</p>
+      <div class="row">
+          <p>Geospatial Online Projects</p>
+      </div>
+      <div class="row" id='notice'>
+         <small>For non-register user, you can only access the application through Map, Feature Services, BaseMap (drop down menu) and some map tools.
+          If you need to create new project(s) and use another tool,  you must have an account and sign in to do so</small> <br>
+      </div>
+
     </div>
     <div class="container"   id='container-1' >
       <div class="row" id='nav'>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar' class="navbar-brand" target="_blank"href="http://www.arcgis.com/home/index.html">ESRI</a>
+        </nav>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <a id='navbar'class="navbar-brand"  >|</a>
+        </nav>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+          <a id='navbar'class="navbar-brand" href="https://hifld-dhs-gii.opendata.arcgis.com/" target='_blank'>HIFLD</a>
         </nav>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
           <a id='navbar'class="navbar-brand"  >|</a>
@@ -294,8 +307,8 @@
         <div class="container" id="nav">
           <div id="navigation">
             <ul>
-              <li ><a href="/">Home</a></li>
-              <li><a href="#">About Us</a></li>
+              <li ><a href="https://hifld-dhs-gii.opendata.arcgis.com/datasets/" target = "_blank">HFILD Open Data</a></li>
+              <li><a  href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact Us</a></li>
               <li><a href="#">Support</a></li>
             </ul>
           </div>
