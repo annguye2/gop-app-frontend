@@ -73,4 +73,4 @@
 
  
 
-![geospatial-online-projects](http://gop-app-frontend/public/images/Geospatial Online Projects.png)
+![geospatial-online-projects](https://www.w3schools.com/css/trolltunga.jpg)
