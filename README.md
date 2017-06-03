@@ -73,4 +73,4 @@
 
  
 
-![geospatial-online-projects](https://gop-app-frontend/public/images/gop.png)
+![geospatial-online-projects](gop-app-frontend/public/images/gop.png)
