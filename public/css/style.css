@@ -15,7 +15,9 @@ html, body{
   text-align: center;
   margin-left: 8%;
 }
-
+#app-section{
+  margin-top: 4%;
+}
 #title{
   height: 80px;
   font-size: 3.5em;
