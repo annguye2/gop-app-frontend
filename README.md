@@ -1,5 +1,8 @@
 
- App location: https://project5-gop-app-frontend.herokuapp.com/
+ App location: https://gop-api-frontend.herokuapp.com/
+ Created by  : An Nguyen
+
+ ![geospatial-online-projects](https://github.com/annguye2/gop-app-frontend/blob/master/public/images/gop.png)
 
  -  Geospatial online project (GOP) is an web-based app where user can display Feature Server URL provided by ArcGIS Services API.
  You can find more information about ArcGIS Web-Service API by following "http://resources.arcgis.com/en/help/arcgis-rest-api/".
@@ -69,8 +72,3 @@
       . JavaScript
       . Jquery
       . Boostrap css
-
-
- 
-
-![geospatial-online-projects](https://github.com/annguye2/gop-app-frontend/blob/master/public/images/gop.png)
