@@ -71,8 +71,6 @@ function(
      map.showZoomSlider();
    }
 
-
-
     // Home Button
     var home = new HomeButton({
         map: map,
@@ -91,7 +89,6 @@ function(
       map: map
      }, "search");
      search.startup();  // add search bar
-
 
     // *********** change base map on drop down select *********
     $("#basemapSelector" ).change(() =>{
@@ -141,9 +138,7 @@ function(
     //******************* add FeatureLayer **********************
     var addFeatureLayer = (url) => {
       var _id = makeId() ;
-      // console.log("new id ", _id);
       var $div = $("<div>", {id: _id, "class": "attr-table",}); //create new div for attribute table
-
        $("#bot").append($div);
       if(url) {
         console.log('add layer: ');
@@ -160,7 +155,6 @@ function(
           visible: true,
            id: "fLayer"
         });
-
           _featureLayer.setSelectionSymbol(selectionSymbol);
           myFeatureTable = new FeatureTable({
           map: map,
@@ -176,9 +170,7 @@ function(
         map.addLayer(_featureLayer);  // add layer
         map.refresh;
         currentLayer = _featureLayer;
-      //
         }else {  console.log("no layer to add");}
-
     }
 
     //******************* remove FeatureLayer *******************
@@ -209,16 +201,14 @@ function(
       });
     };// end of read data function
 
-  //********** Generate new id of attr-table ******************
-
-  var makeId =  () =>{
+  //********** Generate new id of attr-table : https://stackoverflow.com **************
+   var makeId =  () =>{
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for( var i=0; i < 3; i++ )
     text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
   }
-
   // ready(init(map));
   ready(init);
   //******** end testing section ********

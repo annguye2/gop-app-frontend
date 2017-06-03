@@ -480,6 +480,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
         localStorage.setItem('currentFeatureUrl', selectedProject.feature_url);
         this.showSaveCurrentProjectButton = true;
         this.showHideButtonBoolean = true;
+        this.showAttributeTableBoolean = true;
       }else{
         if(isPublic){
           this.selectSharedProjectRequireMsg = "You must select a project above";

@@ -70,8 +70,8 @@ h4, h3{
 
 #app-col, #user-col{
   width: 50%;
-  height: 160px;
-  border: 1px solid white;
+  height: 300px;
+  border: 1px solid red;
   height: 90px;
 }
 
