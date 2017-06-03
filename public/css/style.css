@@ -19,6 +19,7 @@ html, body{
 #title{
   height: 80px;
   font-size: 3.5em;
+  font-weight: bold;
   color: #2208A6;
 }
 .container{
@@ -202,6 +203,7 @@ color: red !important;
 #notice{
   font-size: 12px;
   color:#031012;
+  font-weight: lighter;
 }
 input::-moz-placeholder {  /* Firefox 19+ */
 color: red !important;
