@@ -73,4 +73,4 @@
 
  
 
-!['geospatial-online-projects'](http://url/to/img.png)
+![geospatial-online-projects](https://www.w3schools.com/css/trolltunga.jpg)
