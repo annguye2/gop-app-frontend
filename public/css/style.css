@@ -1,6 +1,6 @@
 
 #map{
-  height: 620px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -37,10 +37,15 @@ body{
 
 }
 h1 {
+  margin-bottom: 1%;
+  margin-top: 4%;
   width: 100%;
   text-align: center;
-  color: #262D8A;
-  margin-top: 5%;
+  color: #2208A6;
+  height: 50px;
+  padding-top: 1%;
+  font-size: 32px;
+  font-weight: bold;
 }
 h4, h3{
   width: 100%;
@@ -65,8 +70,9 @@ h4, h3{
 
 #app-col, #user-col{
   width: 50%;
-  /*border: 1px solid black;*/
-  height: 100px;
+  height: 160px;
+  border: 1px solid white;
+  height: 90px;
 }
 
 select{
@@ -141,8 +147,8 @@ width: 35%;
 }
 
 #user-container{
-height: 165px;
-border: 3px solid white;
+height: 160px;
+border: 2px solid white;
 
 }
 #bot{
@@ -166,7 +172,7 @@ border: 3px solid white;
   color:#4D5052;;
 }
 #user-name{
-  color: #2CAAD1;
+  color: #2208A6;
   font-family: 'Lato', sans-serif;
 }
 input{

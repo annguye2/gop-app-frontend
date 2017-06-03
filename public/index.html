@@ -56,7 +56,6 @@
   </header>
 
   <div class="container" ng-controller='EsriController as esri'>
-
     <!-- map section -->
     <div class="row" id='map-section'>
       <div  id="map">
@@ -90,21 +89,56 @@
         <span id='required' ng-show='ctrl.loginRequired'>{{esri.selectFeatureRequireMsg}}</span>
       </div>
     </div>
-    <br>
+
     <!-- user SECTION  -->
     <div class="row" id='user-container'>
 
       <!-- user COLUMN -->
       <div class="col-sm-8" id='user-col'>
-        <div class="row"> <br>
+       <br>
+        <div class="row">
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+             <label id='login-display' for="login">Login as: <span id='user-name'>{{ctrl.displayUser.name}}</span></label></div>
+            <div class="col-xs-6 col-md-4"><a ng-disabled='ctrl.disableUserSection'data-toggle="modal" href="#editModal"> Edit Profile</a></div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-10">
+            <select ng-click='esri.loadCurrentUserProjects()' ng-change='esri.resetSelectProjectRequireMsg(selectedprivateProject)'class="form-control" id='user-projects' ng-disabled='ctrl.disableUserSection'
+              ng-model='selectedprivateProject'ng-options="project.name for project in esri.currentUserProjects | orderBy: 'name'">
+                  <option value="">----------------------- Your Projects -----------------</option>
+            </select>
+            <span id='required'>{{esri.selectProjectRequireMsg}}</span>
+          </div>
+        </div> <br>
+        <div class="row"> 
+          <div class="col-md-3" style='align-items: right;'>
+              <!-- <button id='loadProjectToMap'ng-disabled='ctrl.disableUserSection' class='button'type="button" ng-click='esri.loadProjectToMap(selectedprivateProject, false)'>Load To Map</button> -->
+          </div>
+          <div class="col-md-6">
+              <button ng-disabled='ctrl.disableUserSection'class='button'type="button" ng-click='esri.loadProjectEditInfo(selectedprivateProject)' data-toggle="modal"data-target="#editProject">Edit Project</button>
+              <button id='loadProjectToMap'ng-disabled='ctrl.disableUserSection' class='button'type="button" ng-click='esri.loadProjectToMap(selectedprivateProject, false)'>Load To Map</button>
+          </div>
+          <div class="col-md-3">
+              <!-- <button ng-disabled='ctrl.disableUserSection'class='button'type="button" ng-click='esri.loadProjectEditInfo(selectedprivateProject)' data-toggle="modal"data-target="#editProject">Edit Project</button> -->
+          </div>
+        </div>
+
+
+
+
+        <!-- <div class="row"> <br>
           <div class="col-sm-6">
             <label id='login-display' for="login">Login as: <span id='user-name'>{{ctrl.displayUser.name}}</span></label>
           </div>
           <div class="col-sm-6">
             <a ng-disabled='ctrl.disableUserSection'data-toggle="modal" href="#editModal"> Edit Profile</a>
-          </div> <br><br>
-        </div>
-        <div class="row">
+          </div>
+        </div> -->
+        <!-- <div class="row">
           <div class="col-sm-4" id='test'>
             <button id='loadProjectToMap'ng-disabled='ctrl.disableUserSection' class='button'type="button" ng-click='esri.loadProjectToMap(selectedprivateProject, false)'>Load To Map</button>
             <button ng-disabled='ctrl.disableUserSection'class='button'type="button" ng-click='esri.loadProjectEditInfo(selectedprivateProject)' data-toggle="modal"data-target="#editProject">Edit</button>
@@ -112,15 +146,16 @@
           <div class="form-group">
             <div class="col-sm-8">
               <select ng-click='esri.loadCurrentUserProjects()' ng-change='esri.resetSelectProjectRequireMsg(selectedprivateProject)'class="form-control" id='user-projects' ng-disabled='ctrl.disableUserSection'
-                ng-model='selectedprivateProject'ng-options="project.name for project in esri.currentUserProjects | orderBy: 'name'"  >
-                    <option value="">-- Your Projects --</option>
-              </select>
-              <span id='required'>{{esri.selectProjectRequireMsg}}</span>
-            </div>
-            <div class="col-sm-4">
-            </div>
+              ng-model='selectedprivateProject'ng-options="project.name for project in esri.currentUserProjects | orderBy: 'name'"  >
+              <option value="">-- Your Projects --</option>
+            </select>
+            <span id='required'>{{esri.selectProjectRequireMsg}}</span>
           </div>
-        </div><br>
+          <div class="col-sm-4">
+          </div>
+        </div>
+      </div> -->
+      <br>
 
             <!-- Modal Edit project -->
          <div class="modal fade" id="editProject" role="dialog" >
