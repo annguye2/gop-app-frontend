@@ -70,6 +70,7 @@ h4, h3{
 {
   /*list-style-type: none;*/
   display: inline;
+  font-size: 1.5em;
 }
 #navigation li:not(:first-child):before {
   content: " | ";
@@ -81,14 +82,12 @@ h4, h3{
   border: 1px solid white;
 }
 
-select{
-   background:none;
-   background-color: Transparent;
-   -webkit-appearance: none;
+#fnavigation{
+  font-size: 1em;
 }
 .button{
   height: 35px;
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
   background-color: Transparent;
   /*color: #162D7F;*/
@@ -111,6 +110,7 @@ select{
   padding: 1rem;
   text-align: center;
   margin-bottom: 3%;
+  font-size: 1em;
 
 }
 #map-tool{

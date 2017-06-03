@@ -84,13 +84,13 @@
     <div class="row" id='map-tool'>
       <div class="col-sm-3" id="search"> </div>
       <div class="col-sm-2" id="base-map">
-        <select id='basemapSelector'  ng-model="esri.selectedBasemapGallery" class="form-control">
+        <select id='basemapSelector'  ng-model="esri.selectedBasemapGallery" class="form-control input-lg" >
           <option class="selectpicker"value="">---Change Base Map--</option> <!-- not selected / blank option -->
           <option ng-repeat="basemap in esri.basemapGallery | orderBy: 'label' " value="{{basemap.value}}">{{basemap.label}}</option>
         </select>
       </div>
       <div class="col-sm-7" id="feature-layer">
-        <select ng-change='esri.resetSelectFeatureeRequireMsg(selectedFeature)'class="form-control"id='featureServiceSelector' ng-model="selectedFeature" ng-options="feature as feature.title for feature in esri.featureServices | orderBy: 'title'">
+        <select ng-change='esri.resetSelectFeatureeRequireMsg(selectedFeature)'class="form-control input-lg" id='featureServiceSelector' ng-model="selectedFeature" ng-options="feature as feature.title for feature in esri.featureServices | orderBy: 'title'">
           <option value="">---------------------Select A Feature Service------------------</option>
      </select>
         <button ng-click='esri.addSelectedFeatureToMap(selectedFeature)' id='addLayer' class='button' name="button" >Add To Map</button>
@@ -120,7 +120,7 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <select ng-click='esri.loadCurrentUserProjects()' ng-change='esri.resetSelectProjectRequireMsg(selectedprivateProject)'class="form-control" id='user-projects' ng-disabled='ctrl.disableUserSection'
+            <select ng-click='esri.loadCurrentUserProjects()' ng-change='esri.resetSelectProjectRequireMsg(selectedprivateProject)' class="form-control input-lg" id='user-projects' ng-disabled='ctrl.disableUserSection'
             ng-model='selectedprivateProject'ng-options="project.name for project in esri.currentUserProjects | orderBy: 'name'">
             <option value="">----------------------- Your Projects -----------------</option>
           </select>
@@ -150,9 +150,9 @@
          <div class="row">
            <div class="col-md-1"></div>
            <div class="col-md-10">
-             <select ng-change='esri.resetSelectSharedProjectRequireMsg(selectedPublicProject)'  class="form-control" id='shared-projects'
+             <select ng-change='esri.resetSelectSharedProjectRequireMsg(selectedPublicProject)'  class="form-control input-lg" id='shared-projects'
               ng-model='selectedPublicProject'ng-options="project.name for project in esri.sharedProjects | orderBy: 'name'"  >
-                         <option value="">---------------------Shared Projects------------------</option>
+                         <option value="">---------------------------------Shared Projects------------------------------</option>
              </select>
                <span id='required'>{{esri.selectSharedProjectRequireMsg}}</span>
            </div>
@@ -308,7 +308,7 @@
         <div class="container" id="nav">
           <div id="navigation">
             <ul>
-              <li ><a href="https://hifld-dhs-gii.opendata.arcgis.com/datasets/" target = "_blank">HFILD Open Data</a></li>
+              <li><a href="https://hifld-dhs-gii.opendata.arcgis.com/datasets/" target = "_blank">HFILD Open Data</a></li>
               <li><a  href="mailto:someone@example.com?Subject=Question" target="_top">Contact Us</a></li>
               <li><a href="https://github.com/annguye2/gop-app-frontend/blob/master/README.md" target = "_blank">Support</a></li>
             </ul>
