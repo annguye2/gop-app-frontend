@@ -1,9 +1,11 @@
 
 // Domains variables
-const app_domain = 'http://localhost:8000/';
-//const api_domain = 'http://localhost:3000/';
-//const app_domain = 'https://project5-gop-app-frontend.herokuapp.com/';
-const api_domain = 'https://gop-app-server-api.herokuapp.com/'
+//const app_domain = 'http://localhost:8000/';
+// const api_domain = 'http://localhost:3000/';
+
+const api_domain  = 'https://gop-app-api.herokuapp.com/'; // testing
+const app_domain = 'https://project5-gop-app-frontend.herokuapp.com/';
+//const api_domain = 'https://gop-app-server-api.herokuapp.com/'    // this works wihout email column // do not remove
 
 //==================Angular app  ================
 const app = angular.module('GopApp', []);
@@ -110,7 +112,7 @@ app.controller('UserController', ['$http', '$scope','$rootScope',function($http,
 
   //********************* Update Profile **********
   this.updateProfile = () => {
-    console.log('update user profile:');
+    console.log('update user profile:', this.currentUser);
     this.updateErrorMsg = '';
     if ((this.currentUser.name == "" || this.currentUser.name == undefined)){
       this.updateErrorMsg = "missing user's name";
