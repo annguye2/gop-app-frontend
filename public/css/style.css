@@ -1,6 +1,6 @@
 
 #map{
-  height: 650px;
+  height: 700px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -98,11 +98,11 @@ h4, h3{
 }
 .button{
   height: 30px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: center;
   background-color: Transparent;
   /*color: #162D7F;*/
-  color: #4D5052;
+  /*color: #4D5052;*/
   border-radius: 2px;
 
  border: 1px;
