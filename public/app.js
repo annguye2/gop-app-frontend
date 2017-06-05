@@ -201,6 +201,7 @@ app.controller('EsriController',['$http', '$scope','$rootScope',function($http,$
 
     //******************** ESRI Save Map to Project********************
     this.createProjectFromMap = (selectedFeature) => {
+      'l'
       console.log(selectedFeature);
       if(localStorage.getItem('loginSuccess')!= null || localStorage.getItem('loginSuccess')!= undefined){
         if(selectedFeature){
